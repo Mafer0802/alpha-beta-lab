@@ -35,3 +35,15 @@ def test_alpha_beta_ordered_tree_prunes_branches():
 
     assert result.value == 8
     assert result.branches_pruned > 0
+
+from src.tic_tac_toe import best_computer_move, winner
+
+
+def test_tic_tac_toe_detects_winner():
+    board = ["X", "X", "X", " ", "O", " ", " ", " ", "O"]
+    assert winner(board) == "X"
+
+
+def test_computer_takes_winning_move():
+    board = ["O", "O", " ", "X", "X", " ", " ", " ", " "]
+    assert best_computer_move(board) == 2
